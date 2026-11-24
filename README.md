@@ -28,9 +28,6 @@ so the same line is safe on every machine.
 
 ## What changed in this cleanup
 
-- **The old `alias.txt` could not work.** It had Windows line endings, so sourcing it on Linux turned
-  every alias into a command ending in a carriage return (`clear\r: command not found`).
-  It is now `aliases.sh` with Unix line endings, enforced by `.gitattributes`, and a test checks for it.
 - `ipi` used `ifconfig getifaddr en0`, which is not a real command (the macOS one is `ipconfig`), and it
   was hard-wired to one interface. It now finds the interface from the default route, on Linux and macOS.
 - `ipe` asked ipinfo.io over plain HTTP and printed no newline. It uses HTTPS and ends the line.
