@@ -10,7 +10,7 @@ echo 'source ~/alias/aliases.sh' >> ~/.bashrc    # or ~/.zshrc
 Sourcing the file prints nothing, and aliases are only defined when the command behind them exists,
 so the same line is safe on every machine.
 
-## What you get
+## Info
 
 | | | |
 |---|---|---|
@@ -26,7 +26,7 @@ so the same line is safe on every machine.
 | `ipt` | `sudo iptables -L -n -v --line-numbers` | Firewall rules with counters (Linux) |
 | `update` | `apt-get`, `pacman -Syu` or `brew`, whichever exists | Update the system |
 
-## CTI helpers
+## CTI alias helpers
 
 An optional second file, `cti.sh`. Load it next to the first one, then run `ctihelp` for the list:
 
@@ -89,7 +89,7 @@ campaign or data source.
 | `cert host [port]` | active | Subject, issuer, dates, fingerprint and names of a TLS certificate |
 | `heads url` | active | Response headers, following redirects |
 
-## What changed in this cleanup
+## Changess
 
 - `ipi` used `ifconfig getifaddr en0`, which is not a real command (the macOS one is `ipconfig`), and it
   was hard-wired to one interface. It now finds the interface from the default route, on Linux and macOS.
