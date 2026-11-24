@@ -1,4 +1,4 @@
-# shellcheck shell=bash
+# shellcheck shell=bash disable=SC2119,SC2120,SC2018,SC2019  # optional-argument functions; ASCII-only tr ranges are intended
 # Handy commands for cyber threat intelligence work, for bash and zsh on Linux and macOS.
 #
 #   source /path/to/cti.sh            # add to ~/.bashrc or ~/.zshrc, next to aliases.sh
