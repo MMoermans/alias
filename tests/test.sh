@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# shellcheck disable=SC2016  # single-quoted snippets are code for a second shell, nothing may expand here
 # Sources aliases.sh in bash (and zsh, when installed) and checks that it behaves.
 # Run on Linux or macOS:  bash tests/test.sh
 set -u
@@ -39,7 +40,7 @@ names="$(bash -c ". '$file'; alias" | sed -n "s/^alias \([^=]*\)=.*/\1/p")"
 for name in $names; do
   def="$(bash -c ". '$file'; alias '$name'")"
   def="${def#*=}"; def="${def//\'/}"
-  words=($def)
+  read -r -a words <<<"$def"
   cmd="${words[0]}"
   [[ "$cmd" == sudo ]] && cmd="${words[1]}"
   [[ "$cmd" == "$name" ]] && continue          # cp='cp -i' wraps the command of the same name
