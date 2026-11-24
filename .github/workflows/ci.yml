@@ -19,9 +19,9 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install zsh
         if: runner.os == 'Linux'
-        run: sudo apt-get install -y zsh
+        run: sudo apt-get install -y zsh zip unzip
       - name: Lint
         if: runner.os == 'Linux'
-        run: shellcheck aliases.sh tests/test.sh
+        run: shellcheck aliases.sh cti.sh tests/test.sh
       - name: Test
         run: bash tests/test.sh
